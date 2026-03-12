@@ -12,10 +12,17 @@ import Animal.Dog;
 import Animal.Dog;
 import UserObj.User;
 import Animal.RobotDog;
+import Shipping.AirDelivery;
+import Shipping.BikeDelivery;
+import Shipping.TruckDelivery;
 import computer.Computer;
 import employee.Developer;
 import employee.Employee;
 import employee.Freelancer;
+import delivery.Delivery;
+import Shipping.AirDelivery;
+import Shipping.BikeDelivery;
+import Shipping.TruckDelivery;
 import delivery.Delivery;
 
 /**
@@ -61,9 +68,6 @@ public class STIN_cv1 {
         
         Employee developer = new Developer("Jan",8000);
         Employee freelancer = new Freelancer("Eva",1000,120);
-        
-        System.out.println(developer.name + " salary: " + developer.calculateSalary());
-        System.out.println(freelancer.name + "salary: "+freelancer.calculateSalary());
         
         Delivery d1 = new Delivery("CZ001", 10, new TruckDelivery());
         Delivery d2 = new Delivery("CZ002", 3, new BikeDelivery());

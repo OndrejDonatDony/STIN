@@ -1,27 +1,31 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package delivery;
 
-/**
- *
- * @author mrdon
- */
-public abstract class Delivery {
-    private String id;
-    private int weight;
-    private DeliverOption deliveryOption;
+import Shipping.ShippingMethod;
 
-    public Delivery(String id, int weight, DeliverOption deliveryOption) {
-        this.id = id;
+public class Delivery {
+    private String trackingNumber;
+    private double weight;
+    private ShippingMethod shippingMethod;
+
+    public Delivery(String trackingNumber, double weight, ShippingMethod shippingMethod) {
+        this.trackingNumber = trackingNumber;
         this.weight = weight;
-        this.deliveryOption = deliveryOption;
+        this.shippingMethod = shippingMethod;
     }
-    
-    public int calculatePrice(deliveryOption){
-        return deliveryOption.calculatePrice();
+
+    public double calculatePrice() {
+        return shippingMethod.calculateCost(weight);
     }
-    
-    
+
+    public String getTrackingNumber() {
+        return trackingNumber;
+    }
+
+    public double getWeight() {
+        return weight;
+    }
+
+    public ShippingMethod getShippingMethod() {
+        return shippingMethod;
+    }
 }
